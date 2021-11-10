@@ -33,7 +33,8 @@ article section:first-child {
 }
 
 @media(min-width: 768px) {
-  article section:first-child {
+  article section:first-child,
+article section:last-child {
     width: 600px;
   }
 }
