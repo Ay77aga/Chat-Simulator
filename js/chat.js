@@ -6,11 +6,13 @@ send.addEventListener('click', (e) => {
   e.preventDefault();
   if (msg.value !== '') {
     sendMsg();
-    reply('a7a', 'fuck')
+    reply('a7a', 'fuck');
+    reply('do you love me', 'sure');
+
   }
 
   msg.value = '';
-    send.style.width = '0';
+  send.style.width = '0';
   scroll_Bottom();
 });
 
@@ -32,7 +34,7 @@ msg.addEventListener('input', () => {
 function sendMsg() {
   const text = document.createElement('pre');
   let span = document.createElement('span');
-  text.innerHTML = msg.value;
+  text.innerHTML = msg.value.trim();
   span.innerHTML = time();
   text.appendChild(span)
   area.appendChild(text);
@@ -44,12 +46,13 @@ function reply(massage, reply) {
   const rep = document.createElement('pre');
   rep.className = 'reply';
   span.innerHTML = time();
-  if (msg.value.toLowerCase() == massage) {
-    rep.innerHTML = reply
+
+  if (msg.value.toLowerCase().trim() == massage) {
+    rep.innerHTML = reply;
+  } else {
+    rep.style.display = 'none';
   }
-  else {
-    rep.innerHTML = `I Don't Understand U`;
-  }
+
   rep.appendChild(span)
   area.appendChild(rep);
 }
