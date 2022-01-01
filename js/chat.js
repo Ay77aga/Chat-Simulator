@@ -1,6 +1,8 @@
 const msg = document.querySelector('#msg');
 const send = document.querySelector('[type=submit]');
 const area = document.querySelector('article section:first-child')
+const reps = [];
+
 
 send.addEventListener('click', (e) => {
   e.preventDefault();
@@ -8,7 +10,7 @@ send.addEventListener('click', (e) => {
     sendMsg();
     reply('a7a', 'fuck');
     reply('do you love me', 'sure');
-
+  console.log(reps);
   }
 
   msg.value = '';
@@ -49,10 +51,10 @@ function reply(massage, reply) {
 
   if (msg.value.toLowerCase().trim() == massage) {
     rep.innerHTML = reply;
+    reps.push(reply);
   } else {
     rep.style.display = 'none';
   }
-
   rep.appendChild(span)
   area.appendChild(rep);
 }
@@ -62,7 +64,7 @@ function time() {
   let h = new Date().getHours();
   let m = new Date().getMinutes();
   m = m < 10 ? `0${m}` : m;
-  return h > 12 ? `0${h - 12} : ${m} PM` : `${h} : ${m} AM`;
+  return h >= 12 ? `0${h - 12} : ${m} PM` : `${h} : ${m} AM`;
 }
 // Always Scroll Bottom To simulator Chat
 function scroll_Bottom() {
