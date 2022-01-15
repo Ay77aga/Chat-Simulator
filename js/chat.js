@@ -10,9 +10,10 @@ send.addEventListener('click', (event) => {
     sendMsg();
     reply('a7a', 'fuck you ;)');
     reply('do you love me', 'I love you');
-    reply('leat me die', 'No :(');
-    reply('fuck you', 'Too');
-    reply('really', 'really :)');
+    reply('fuck you', 'Fuck You Too');
+    reply('really', 'really My Dear :)');
+    reply('are you relationship', 'With You ;-)');
+    reply('thank you', 'Take My Heart')
   }
   // unknown msgs rep 
   un(msg.value);
