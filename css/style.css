@@ -67,7 +67,8 @@ article section:first-child .reply {
   flex: none;
   overflow: auto;
   border-radius: 1rem;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   position: relative;
   font-weight: bold;
   font-family: Arial;

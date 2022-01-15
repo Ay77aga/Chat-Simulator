@@ -17,12 +17,11 @@ function sendMsg() {
 
 function reply(massage, reply) {
   let span = document.createElement('span');
-  const rep = document.createElement('pre');
+  const rep = document.querySelector('pre.reply').cloneNode(true);
   map.set(massage, reply);
-  rep.className = 'reply';
   span.innerHTML = time();
   if (msg.value.toLowerCase().trim() == massage) {
-    rep.innerHTML = map.get(massage);
+    rep.textContent = map.get(massage);
     rep.appendChild(span)
     area.appendChild(rep);
   }
@@ -30,15 +29,10 @@ function reply(massage, reply) {
 }
 
 function un(massage) {
-  let span = document.createElement('span');
-  const rep = document.createElement('pre');
-  span.innerHTML = time();
-  rep.className = 'reply';
+  const rep = document.querySelector('pre.reply').cloneNode(true);
   if (!map.has(massage.toLowerCase().trim())) {
     rep.innerHTML = `I'm Not Understand You?`;
-    rep.appendChild(span)
     area.appendChild(rep);
-
     console.log(1)
   }
 }
